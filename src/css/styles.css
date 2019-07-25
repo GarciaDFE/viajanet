@@ -1258,8 +1258,8 @@ html {
 
 body {
   font-family: "Roboto", "Arial", sans-serif;
-  background-color: white;
-  color: black; }
+  background-color: #F7F7F7;
+  color: #7D7D7D; }
 
 img {
   max-width: 100%;
@@ -1272,8 +1272,8 @@ img {
   margin: 0 auto;
   top: 0;
   left: 0;
-  z-index: 100;
-  background-color: rgba(128, 128, 128, 0.2); }
+  background-color: #FFF;
+  z-index: 100; }
 
 .brand-nav {
   display: flex;
@@ -1283,7 +1283,7 @@ img {
   .brand-nav a:active,
   .brand-nav a:link,
   .brand-nav a:hover {
-    color: black;
+    color: #024b8e;
     text-decoration: none; }
   .brand-nav .imgLogo {
     width: 120px; }
@@ -1296,7 +1296,7 @@ img {
   .btn-menu .bar1, .btn-menu .bar2, .btn-menu .bar3 {
     width: 30px;
     height: 4px;
-    background-color: black;
+    background-color: #024b8e;
     margin: 6px 0;
     transition: 500ms; }
   .btn-menu.change .bar1 {
@@ -1310,7 +1310,7 @@ img {
 
 .nav-bar {
   display: flex;
-  font-size: 14px;
+  font-size: 1.4rem;
   height: 100%; }
   @media (min-width: 992px) {
     .nav-bar {
@@ -1324,14 +1324,15 @@ img {
     height: auto;
     top: 60px;
     right: 0;
-    font-weight: 400;
-    line-height: 50px;
+    font-weight: 500;
+    line-height: 5rem;
     padding: 10px 20px;
     transform: translateX(200%);
-    transition: transform 300ms linear;
+    transition: transform 500ms linear;
     z-index: 10; }
     .nav-bar > .menu.menu-open {
       transform: translateX(0);
+      transition: transform 500ms linear;
       visibility: visible; }
     @media (min-width: 992px) {
       .nav-bar > .menu {
@@ -1342,7 +1343,7 @@ img {
         transform: translateX(0);
         width: 100%;
         top: 0;
-        background-color: rgba(2, 75, 142, 0.2); } }
+        background-color: #FFF; } }
     .nav-bar > .menu > .item {
       position: relative;
       display: block;
@@ -1355,39 +1356,52 @@ img {
       .nav-bar > .menu > .item.-desktop {
         display: none; }
       .nav-bar > .menu > .item.-contact {
-        position: relative; }
+        position: relative;
+        cursor: pointer; }
         .nav-bar > .menu > .item.-contact:before {
           content: "";
           position: relative;
-          background: url(../img/phone.svg);
+          background: url(../img/phone-mobile.svg);
           background-repeat: no-repeat;
           background-position: center;
           padding: 12px;
           margin-right: 12px; }
+          @media (min-width: 992px) {
+            .nav-bar > .menu > .item.-contact:before {
+              background: url(../img/phone-desktop.svg);
+              background-repeat: no-repeat;
+              background-position: center; } }
         .nav-bar > .menu > .item.-contact .btn-ligue .ligue {
           display: none; }
         .nav-bar > .menu > .item.-contact .btn-ligue .phone {
           font-family: inherit;
-          font-size: 22px;
+          font-size: 2.2rem;
           font-weight: bold; }
         @media (min-width: 992px) {
           .nav-bar > .menu > .item.-contact .btn-ligue {
             position: absolute;
             display: none;
-            background-color: white;
-            color: #024b8e;
+            background-color: #FFF;
+            color: #1471c3;
             width: 200px;
-            top: 30px;
+            line-height: 2.5rem;
+            top: 40px;
             right: 0;
-            padding: 20px;
-            border: 1px gray solid;
-            box-shadow: 5px 5px 10px gray; }
+            padding: 10px 20px;
+            border: 1px #7D7D7D solid;
+            box-shadow: 5px 5px 10px #7D7D7D; }
             .nav-bar > .menu > .item.-contact .btn-ligue .ligue {
               display: block;
-              color: gray;
+              color: #7D7D7D;
               text-transform: uppercase;
-              margin-bottom: 7px;
               text-align: center; } }
+        @media (min-width: 992px) {
+          .nav-bar > .menu > .item.-contact:hover .btn-ligue {
+            display: block; }
+          .nav-bar > .menu > .item.-contact:hover:before {
+            background: url(../img/phone-hover.svg);
+            background-repeat: no-repeat;
+            background-position: center; } }
       @media (min-width: 992px) {
         .nav-bar > .menu > .item {
           position: relative;
@@ -1402,22 +1416,35 @@ img {
             text-align: right;
             padding: 0 20px; }
           .nav-bar > .menu > .item.-contact {
-            border-left: 1px solid gray;
+            border-left: 1px solid #7D7D7D;
             padding-left: 20px;
-            padding-right: 0; }
+            padding-right: 0;
+            line-height: 40px; }
             .nav-bar > .menu > .item.-contact:before {
               margin-right: 0; } }
       .nav-bar > .menu > .item > .action {
         position: relative;
-        color: white;
+        font-weight: 500;
+        color: #FFF;
         list-style: none;
         text-decoration: none;
         cursor: pointer; }
         @media (min-width: 992px) {
           .nav-bar > .menu > .item > .action {
-            color: gray; } }
-        .nav-bar > .menu > .item > .action:hover:after {
-          transform: scale(1); }
+            color: #7D7D7D; }
+            .nav-bar > .menu > .item > .action:after {
+              content: "";
+              height: 2px;
+              width: 100%;
+              background-color: #1471c3;
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              transform: scaleX(0);
+              transition: transform 200ms linear;
+              transform-origin: center; }
+            .nav-bar > .menu > .item > .action:hover:after {
+              transform: scale(1); } }
 
 .main-navigation {
   position: relative;

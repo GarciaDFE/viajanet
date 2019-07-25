@@ -1,6 +1,6 @@
 .nav-bar {
   display: flex;
-  font-size: 14px;
+  font-size: 1.4rem;
   height: 100%;
   @include mq(lg) {
     display: inline-flex;
@@ -9,19 +9,20 @@
   > .menu {
       position: absolute;
       display: block;
-      background-color: #024b8e;
+      background-color: $color-primary-dark;
       width: 240px;
       height: auto;
       top: 60px;
       right: 0;
-      font-weight: 400;
-      line-height: 50px;
+      font-weight: 500;
+      line-height: 5rem;
       padding: 10px 20px;
       transform: translateX(200%);
-      transition: transform 300ms linear;
+      transition: transform 500ms linear;
       z-index: 10;
       &.menu-open {
         transform: translateX(0);
+        transition: transform 500ms linear;
         visibility: visible;
       }
       @include mq(lg) {
@@ -32,7 +33,7 @@
         transform: translateX(0);
         width: 100%;
         top: 0;
-        background-color: rgba(2, 75, 142, 0.2);
+        background-color: $color-zero;
       }
       > .item {
         position: relative;
@@ -40,7 +41,7 @@
         width: 100%;
         text-align: left;
         &.-mobile {
-          border-bottom: 1px solid rgba(255,255,255,0.5);
+          border-bottom: 1px solid rgba($color-zero,0.5);
           padding-bottom: 0.5em;
           margin-bottom: 1em;
         }
@@ -49,14 +50,20 @@
         }
         &.-contact {
           position: relative;
+          cursor: pointer;
           &:before {
             content: "";
             position: relative;
-            background: url(../img/phone.svg);
+            background: url(../img/phone-mobile.svg);
             background-repeat: no-repeat;
             background-position: center;
             padding: 12px;
             margin-right: 12px;
+            @include mq(lg) {
+              background: url(../img/phone-desktop.svg);
+              background-repeat: no-repeat;
+              background-position: center;
+            }
           }
           .btn-ligue {
             .ligue {
@@ -64,29 +71,42 @@
             }
             .phone {
               font-family: inherit;
-              font-size: 22px;
+              font-size: 2.2rem;
               font-weight: bold;
             }
             @include mq(lg) {
               position: absolute;
               display: none;
-              background-color: white;
-              color: #024b8e;
+              background-color: $color-zero;
+              color: $color-primary-medium;
               width: 200px;
-              top: 30px;
+              line-height: 2.5rem;
+              top: 40px;
               right: 0;
-              padding: 20px;
-              border: 1px gray solid;
-              box-shadow: 5px 5px 10px gray;
+              padding: 10px 20px;
+              border: 1px $color-medium solid;
+              box-shadow: 5px 5px 10px $color-medium;
               .ligue {
                 display: block;
-                color: gray;
+                color: $color-medium;
                 text-transform: uppercase;
-                margin-bottom: 7px;
                 text-align: center;
               }
             }
           }
+          @include mq(lg) {
+            &:hover {
+              .btn-ligue {
+                display: block;
+              }
+            }
+            &:hover:before {
+              background: url(../img/phone-hover.svg);
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+
         }
         @include mq(lg) {
           position: relative;
@@ -103,84 +123,39 @@
               padding: 0 20px;
           }
           &.-contact {
-            border-left: 1px solid gray;
+            border-left: 1px solid $color-medium;
             padding-left: 20px;
             padding-right: 0;
+            line-height: 40px;
             &:before {
               margin-right: 0;
             }
-  
-          }
+          }  
         }
-
-        // /* 1101px a 1199px */
-        // @media all and (min-width: $break-desktop - 99) and (max-width: $break-desktop - 1) {
-        //   padding-right: 45px;
-        // }
-        // /* 1000px a 1100px */
-        // @media all and (min-width: $break-desktop - 200) and (max-width: $break-desktop - 100) {
-        //   padding-right: 40px;
-        //   font-size: 22px;
-        // }
-        // /* 900px a 999px */
-        // @media all and (min-width: $break-tablet) and (max-width: $break-desktop - 201) {
-        //   padding-right: 40px;
-        //   font-size: 17px;
-        // }
-        // /* 600px a 899px */
-        // @media all and (min-width: $break-phone) and (max-width: $break-tablet - 1) {
-        //   padding-right: 40px;
-        //   font-size: 15px;
-        // }
-        // &:last-child {
-        //   display: none;
-          // /* até 599px */
-          // @media all and (max-width: $break-phone - 1) {
-          //   display: inline-block;
-          // }
-        //}
-        // &:not(:last-child) {
-          // /* até 599px */
-          // @media all and (max-width: $break-phone - 1) {
-          //   border-bottom: 1px solid $color-secondary-light;
-          // }
-        //}
         > .action {
           position: relative;
-          color: white;
+          font-weight: 500;
+          color: $color-zero;
           list-style: none;
           text-decoration: none;
           cursor: pointer;
           @include mq(lg) {
-            color: gray;
-          }
-          // /* até 599px */
-          // @media all and (max-width: $break-phone - 1) {
-          //   color: $color-secondary-light;
-          // }
-          // &:after {
-          //   /* a partir de 600px */
-          //   @media all and (min-width: $break-phone) {
-          //     content: "";
-          //     height: 4px;
-          //     width: 100%;
-          //     background-color: $color-primary-medium;
-          //     position: absolute;
-          //     bottom: -5px;
-          //     left: 0;
-          //     transform: scaleX(0);
-          //     transition: transform 200ms linear;
-          //     transform-origin: center;
-          //   }
-          // }
-          // &:hover {
-          //   /* a partir de 600px */
-          //   @media all and (min-width: $break-phone) {
-          //     color: $color-primary-medium;
-          //   }
-          // }
-          &:hover:after {
-            transform: scale(1);
+            color: $color-medium;
+            &:after {
+              content: "";
+              height: 2px;
+              width: 100%;
+              background-color: $color-primary-medium;
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              transform: scaleX(0);
+              transition: transform 200ms linear;
+              transform-origin: center;
+            }
+            &:hover:after {
+              transform: scale(1);
+            }
           }
         }
       }
