@@ -1300,7 +1300,7 @@ img {
 .links-footer {
   display: block;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1260px;
   height: auto;
   margin: 0 auto;
   padding: 0 20px; }
@@ -1350,17 +1350,16 @@ img {
 .wrap-cards {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1260px;
   margin: 0 auto;
-  background-color: rgba(128, 128, 128, 0.3); }
+  padding: 0; }
 
 .card-ticket {
   box-sizing: border-box;
   position: relative;
-  background-color: white;
+  background-color: #FFF;
   width: 300px;
-  height: 350px;
-  margin: 10px; }
+  height: 350px; }
   .card-ticket > .image {
     width: 100%; }
   .card-ticket > .content {
@@ -1459,13 +1458,17 @@ img {
         bottom: 0;
         font-size: 1.2rem;
         font-weight: 400;
-        text-align: center; }
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+        padding: 30px 0 0; }
         .card-ticket > .content > .descr .company.-latam {
-          background-image: url(../img/icon_latam.gif);
-          background-repeat: no-repeat;
-          background-position: top center;
-          background-size: contain;
-          padding: 30px 0 0; }
+          background-image: url(../img/icon_latam.gif); }
+        .card-ticket > .content > .descr .company.-gol {
+          background-image: url(../img/icon-gol.webp); }
+        .card-ticket > .content > .descr .company.-azul {
+          background-image: url(../img/icon-azul.webp); }
     .card-ticket > .content > .btn {
       width: 100%;
       height: auto;
@@ -1643,7 +1646,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1260px;
   margin: 0 auto;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -1652,3 +1655,14 @@ img {
   @media (min-width: 992px) {
     .main-navigation .btn-menu {
       display: none; } }
+
+.main-cards {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  height: 400px;
+  padding: 40px 0;
+  background-color: rgba(128, 128, 128, 0.2); }
+  @media (min-width: 1260px) {
+    .main-cards {
+      justify-content: space-between; } }

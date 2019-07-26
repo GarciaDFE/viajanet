@@ -1,10 +1,9 @@
 .card-ticket {
      box-sizing: border-box;
      position: relative;
-     background-color: white;
+     background-color: $color-zero;
      width: 300px;
      height: 350px;
-     margin: 10px;
      > .image {
           width: 100%;
      }
@@ -118,12 +117,18 @@
                     font-size: 1.2rem;
                     font-weight: 400;
                     text-align: center;
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                    background-size: contain;
+                    padding: 30px 0 0;
                     &.-latam {
                          background-image: url(../img/icon_latam.gif);
-                         background-repeat: no-repeat;
-                         background-position: top center;
-                         background-size: contain;
-                         padding: 30px 0 0;
+                    }
+                    &.-gol {
+                         background-image: url(../img/icon-gol.webp);
+                    }
+                    &.-azul {
+                         background-image: url(../img/icon-azul.webp);
                     }
                }
           }
