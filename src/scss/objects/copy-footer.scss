@@ -1,0 +1,15 @@
+.copy-footer {
+     width: 100%;
+     margin: 0 auto;
+     display: block;
+     font-size: 1.2rem;
+     font-weight: 400;
+     text-align: center;
+     padding: 15px 20px;
+     line-height: 1.6rem;
+     color: $color-zero;
+     background-color: $color-primary-dark;
+     > :not(:last-child) {
+          margin-bottom: 15px;
+     }
+}

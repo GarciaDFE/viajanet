@@ -1,0 +1,39 @@
+.links-footer {
+     display: block;
+     width: 100%;
+     max-width: $xlarge;
+     height: auto;
+     margin: 0 auto;
+     padding: 0 20px;
+     @include mq(lg) {
+          display:flex;
+          justify-content: flex-start;
+          align-items: center;
+          border-top: 1px solid $color-medium;
+     }
+     > .afiliado {
+          padding: 20px 0;
+          text-align: center;
+          @include mq(lg) {
+               order: 1;
+          }
+     }
+     > .apps {
+          padding: 20px 0;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          border-top: 1px solid $color-medium;
+          border-bottom: 1px solid $color-medium;
+          @include mq(lg) {
+               order: 2;
+               border: none;
+          }
+     }
+     > .selos {
+          padding: 20px 0;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+     }
+}
