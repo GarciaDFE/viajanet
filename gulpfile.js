@@ -80,21 +80,6 @@ function optimizeHTML() {
     .pipe(gulp.dest("dist/"));
 }
 
-// Copiar arquivos
-// function copyFiles() {
-//   return (
-//     gulp.src(["src/*.php"]).pipe(gulp.dest("dist/")),
-//     gulp.src(["src/phpmailer/**/*"]).pipe(gulp.dest("dist/phpmailer/")),
-//     gulp.src(["src/js/form/**/*"]).pipe(gulp.dest("dist/js/"))
-//   );
-// }
-
-// Agrupar tarefas a serem monitoradas
-function watch() {
-  gulp.watch("src/scss/**/*.scss", compilaSASS);
-  // gulp.watch("src/css/**/*.css", optimizeCSS);
-}
-
 // Agrupar e executar tarefas
 const build = gulp.parallel(
   compilaSASS,
@@ -104,7 +89,5 @@ const build = gulp.parallel(
   optimizeIMG,
   replaceHTML,
   optimizeHTML,
-  //copyFiles,
-  //watch
 );
 gulp.task("default", build);
