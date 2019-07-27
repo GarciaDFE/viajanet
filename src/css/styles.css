@@ -1328,12 +1328,12 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center; }
-  .brand-nav a,
-  .brand-nav a:active,
-  .brand-nav a:link,
-  .brand-nav a:hover {
-    color: #024b8e;
-    text-decoration: none; }
+  @media (min-width: 992px) {
+    .brand-nav {
+      margin-right: 10px; } }
+  @media (min-width: 1260px) {
+    .brand-nav {
+      margin-right: 40px; } }
   .brand-nav .imgLogo {
     width: 120px; }
 
@@ -1444,7 +1444,8 @@ img {
         line-height: 30px; }
       .card-ticket > .content > .off .text {
         line-height: 12px;
-        margin-top: 2px; }
+        margin-top: 2px;
+        text-align: left; }
       .card-ticket > .content > .off:before {
         position: absolute;
         content: '';
@@ -1467,6 +1468,7 @@ img {
     .card-ticket > .content > .title {
       font-size: 1.4rem;
       font-weight: 500;
+      text-align: left;
       color: #7D7D7D; }
       .card-ticket > .content > .title .route {
         font-size: 1.6rem;
@@ -1671,7 +1673,7 @@ img {
         .nav-bar > .menu > .item {
           position: relative;
           width: auto;
-          padding-right: 15px;
+          padding-right: 20px;
           line-height: 15px; }
           .nav-bar > .menu > .item.-mobile {
             display: none; }
@@ -1719,7 +1721,6 @@ img {
   max-width: 1260px;
   margin: 0 auto;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 0 20px;
   width: 100%; }
   @media (min-width: 992px) {

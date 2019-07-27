@@ -2,30 +2,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  // /* 600px a 899px */
-  // @media all and (min-width: $break-phone) and (max-width: $break-tablet - 1) {
-  //   justify-content: center;
-  //   flex-direction: column;
-  //   width: 60px;
-  // }
-  a,
-  a:active,
-  a:link,
-  a:hover {
-    color: $color-primary-dark;
-    text-decoration: none;
+  @include mq(lg) {
+    margin-right: 10px;
+  }
+  @include mq(xl) {
+    margin-right: 40px;
   }
   .imgLogo {
     width: 120px;
-    // /* 600px a 899px */
-    // @media all and (min-width: $break-phone) and (max-width: $break-tablet - 1) {
-    //   transform: translateY(0);
-    //   width: 80px;
-    //   margin: 0 0 3px 0;
-    // }
-    // /* 320px a 599px */
-    // @media all and (min-width: $break-min) and (max-width: $break-phone - 1) {
-    //   display: none;
-    // }
   }
 }
