@@ -21,74 +21,64 @@ function compilaSASS() {
 }
 
 //Minificar/concatenar/renomear arquivos CSS da pasta SRC para pasta DIST
-// function optimizeCSS() {
-//   return gulp
-//     .src(["src/css/**/*.css"])
-//     .pipe(cssmin())
-//     .pipe(concat("styles.css"))
-//     .pipe(rename({ suffix: ".min" }))
-//     .pipe(gulp.dest("dist/css"));
-// }
+function optimizeCSS() {
+  return gulp
+    .src(["src/css/**/*.css"])
+    .pipe(cssmin())
+    .pipe(concat("styles.css"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("dist/css"));
+}
 
 // Minificar/concatenar/renomear arquivos JS Geral Dev
-// function optimizeJSGeneral() {
-//   return gulp
-//     .src(["src/js/components/**/*.js"])
-//     .pipe(uglify())
-//     .pipe(concat("scripts.js"))
-//     .pipe(rename({ suffix: ".min" }))
-//     .pipe(gulp.dest("dist/js"));
-// }
+function optimizeJSGeneral() {
+  return gulp
+    .src(["src/js/components/**/*.js"])
+    .pipe(uglify())
+    .pipe(concat("scripts.js"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("dist/js"));
+}
 
 // Minificar/concatenar/renomear arquivos JS Carousel Dev
-// function optimizeJSCarousel() {
-//   return gulp
-//     .src(["src/js/carousel/**/*.js"])
-//     .pipe(uglify())
-//     .pipe(concat("carousel.js"))
-//     .pipe(rename({ suffix: ".min" }))
-//     .pipe(gulp.dest("dist/js"));
-// }
-
-// Minificar/concatenar/renomear arquivos JS Form Dev
-// function optimizeJSForm() {
-//   return gulp
-//     .src(["src/js/form/**/*.js"])
-//     .pipe(uglify())
-//     .pipe(concat("form.js"))
-//     .pipe(rename({ suffix: ".min" }))
-//     .pipe(gulp.dest("dist/js"));
-// }
+function optimizeJSCarousel() {
+  return gulp
+    .src(["src/js/carousel/**/*.js"])
+    .pipe(uglify())
+    .pipe(concat("carousel.js"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("dist/js"));
+}
 
 // Otimizar arquivos de imagens Dev
-// function optimizeIMG() {
-//   return gulp
-//     .src("src/img/**/*")
-//     .pipe(imagemin())
-//     .pipe(gulp.dest("dist/img"));
-// }
+function optimizeIMG() {
+  return gulp
+    .src("src/img/**/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("dist/img"));
+}
 
 // Renomear links de CSS e JS minificados carregados no HTML Dev
-// function replaceHTML() {
-//   return gulp
-//     .src(["src/*.html"])
-//     .pipe(
-//       htmlreplace({
-//         allcss: "css/styles.min.css",
-//         alljs: "js/scripts.min.js",
-//         carousel: "js/carousel.min.js"
-//       })
-//     )
-//     .pipe(gulp.dest("dist/"));
-// }
+function replaceHTML() {
+  return gulp
+    .src(["src/*.html"])
+    .pipe(
+      htmlreplace({
+        allcss: "css/styles.min.css",
+        alljs: "js/scripts.min.js",
+        carousel: "js/carousel.min.js"
+      })
+    )
+    .pipe(gulp.dest("dist/"));
+}
 
 // Otimizar arquivos HTML
-// function optimizeHTML() {
-//   return gulp
-//     .src(["dist/*.html"])
-//     .pipe(htmlmin({ collapseWhitespace: true }))
-//     .pipe(gulp.dest("dist/"));
-// }
+function optimizeHTML() {
+  return gulp
+    .src(["dist/*.html"])
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("dist/"));
+}
 
 // Copiar arquivos
 // function copyFiles() {
@@ -108,14 +98,13 @@ function watch() {
 // Agrupar e executar tarefas
 const build = gulp.parallel(
   compilaSASS,
-  // optimizeCSS,
-  // optimizeJSGeneral,
-  // optimizeJSCarousel,
-  // optimizeJSForm,
-  // optimizeIMG,
-  // replaceHTML,
-  // optimizeHTML,
-  // copyFiles,
-  watch
+  optimizeCSS,
+  optimizeJSGeneral,
+  optimizeJSCarousel,
+  optimizeIMG,
+  replaceHTML,
+  optimizeHTML,
+  //copyFiles,
+  //watch
 );
 gulp.task("default", build);

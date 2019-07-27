@@ -1736,13 +1736,13 @@ img {
   padding: 10px 0; }
 
 .glide__track {
-  padding-bottom: 20px; }
+  padding-bottom: 10px; }
 
 .glide__slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 5px; }
+  padding: 20px 5px 0; }
 
 .glide__bullet {
   height: 15px;
