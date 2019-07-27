@@ -1,0 +1,36 @@
+.main-carousel {
+     box-sizing: border-box;
+     width: 100%;
+     margin: 0 auto;
+     display: block;
+     text-align: center;
+     padding: 10px 0;
+}
+
+.glide__track {
+     padding-bottom: 20px;
+}
+
+.glide__slide {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px 5px;
+}
+
+.glide__bullet {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: $color-secondy;
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover,
+  &--active {
+    background-color: $color-secondy;
+    opacity: 1;
+  }
+  @include mq(xl) {
+     display: none;
+  }
+}

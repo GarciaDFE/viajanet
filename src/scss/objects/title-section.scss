@@ -1,0 +1,22 @@
+.title-section {
+     width: 100%;
+     max-width: $xlarge;
+     text-align: left;
+     > .title {
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: $color-dark;
+          line-height: 3rem;
+     }
+     > .obs {
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: $color-light-2;
+          line-height: 2rem;
+     }
+     @include mq(lg) {
+          > .title {
+               font-size: 2.4rem;
+          }      
+     }
+}

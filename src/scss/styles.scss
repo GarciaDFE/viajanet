@@ -6,6 +6,7 @@
 // importando pasta tools
 @import "tools/bs-grid/bootstrap-grid.scss";
 @import "tools/mymixins.scss";
+@import "tools/glide/glide.core.scss";
 
 // importando pasta generic
 @import "generic/reset.scss";
@@ -22,9 +23,10 @@
 @import "objects/copy-footer.scss";
 @import "objects/wrap-cards.scss";
 @import "objects/card-ticket.scss";
+@import "objects/title-section.scss";
 
 // importando pasta components
 @import "components/btn-menu.scss";
 @import "components/nav-bar.scss";
 @import "components/main-nav.scss";
-@import "components/main-cards.scss"
+@import "components/main-carousel.scss";

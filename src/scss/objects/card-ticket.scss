@@ -4,8 +4,20 @@
      background-color: $color-zero;
      width: 300px;
      height: 350px;
-     > .image {
-          width: 100%;
+     cursor: pointer;
+     &:hover {
+          box-shadow: 1px 1px 5px $color-light-2;
+          > .image {
+               opacity: 0.9;
+          }
+          > .content {
+               .price {
+                    opacity: 0.7;
+               }
+               > .btn {
+                    background-color: $color-tertiary;
+               }
+          }
      }
      > .content {
           height: 190px;
@@ -109,6 +121,7 @@
                font-size: 1.3rem;
                font-weight: 700;
                width: 100%;
+               text-align: left;
                .company {
                     position: absolute;
                     width: 40px;
